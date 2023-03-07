@@ -1,0 +1,3 @@
+select avg(dtp2.gai_cnt) from (select COUNT(1) gai_cnt from dtp group by dtp.gai_id ) dtp2 group by dtp2.gai_id 
+
+

@@ -1,0 +1,2 @@
+PUBLIC surname AS String
+DO FORM LOCFILE('getname.scx') TO surname

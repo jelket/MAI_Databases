@@ -1,0 +1,1 @@
+SELECT * FROM participant_of_dtp 

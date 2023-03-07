@@ -1,0 +1,23 @@
+SELECT;
+	dtp1.description description1, v1.law law1, dtp1.date date1, ;
+	dtp2.description description2, v2.law law2, dtp2.date date2, ;
+	person.name;
+FROM;
+	participant_of_dtp pod1, participant_of_dtp pod2,;
+	dtp dtp1, dtp dtp2,;
+	violation v1, violation v2,;
+	person;
+WHERE;
+	dtp1.id > dtp2.id ;
+	AND pod1.person_id = person.id;
+	AND v1.participant_id = pod1.id ;
+	AND dtp1.id = pod1.dtp_id ;
+	AND pod1.role = 'Водитель';
+	AND dtp1.dtp_date between CTOD('11/01/2021') and CTOD('12/25/2021');
+	AND pod2.person_id = person.id;
+	AND v2.participant_id = pod2.id ;
+	AND dtp2.id = pod2.dtp_id ;
+	AND pod2.role = 'Водитель';
+	AND dtp2.dtp_date between CTOD('11/01/2021') and CTOD('12/25/2021');	
+	AND person.name like 'Волков%'
+

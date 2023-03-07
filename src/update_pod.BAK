@@ -1,0 +1,1 @@
+update participant_of_dtp SET role = 'Пассажир' WHERE role != 'Водитель';
